@@ -1,0 +1,452 @@
+/* 다크 테마 모던 디자인 - Hyper 스타일 */
+* {
+  box-sizing: border-box;
+}
+
+body { 
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Inter', 'Helvetica Neue', sans-serif;
+  margin: 0; 
+  background: #0a0a0a;
+  color: #ffffff;
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+.wrapper { 
+  padding: 0; 
+  width: 400px; 
+  background: #1a1a1a;
+  border-radius: 0;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  border: 1px solid #2a2a2a;
+  margin: 0;
+}
+
+.header {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+  color: #ffffff;
+  padding: 20px;
+  text-align: center;
+  border-bottom: 1px solid #333333;
+  margin: 0;
+  border-radius: 0;
+}
+
+
+.header h1 {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, #ffffff 0%, #a0a0a0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.content {
+  padding: 32px;
+  background: #1a1a1a;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label { 
+  display: block; 
+  margin-bottom: 8px; 
+  font-size: 13px; 
+  font-weight: 600;
+  color: #e0e0e0;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  font-size: 11px;
+}
+
+label.inline { 
+  display: flex; 
+  align-items: center; 
+  gap: 12px; 
+  margin-bottom: 16px;
+}
+
+.model-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.model-group select {
+  flex: 1;
+}
+
+.model-group .refresh-btn {
+  margin: 0;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  font-size: 14px;
+  min-width: 42px;
+  min-height: 42px;
+  max-width: 42px;
+  max-height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+input, select, textarea { 
+  width: 100%; 
+  padding: 12px 16px; 
+  border: 1px solid #333333;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: inherit;
+  background: #2a2a2a;
+  color: #ffffff;
+  transition: all 0.3s ease;
+  outline: none;
+  font-weight: 400;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: #4ecdc4;
+  box-shadow: 0 0 0 3px rgba(78, 205, 196, 0.1);
+  background: #333333;
+}
+
+input::placeholder, textarea::placeholder {
+  color: #666666;
+  font-weight: 400;
+}
+
+select {
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23666' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 12px center;
+  background-repeat: no-repeat;
+  background-size: 16px;
+  padding-right: 40px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.multiselect { 
+  display: grid; 
+  grid-template-columns: 1fr 1fr 1fr; 
+  gap: 12px; 
+  margin: 12px 0;
+}
+
+.multiselect label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  background: #2a2a2a;
+  border: 1px solid #333333;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 0;
+  font-size: 13px;
+  font-weight: 500;
+  color: #e0e0e0;
+  position: relative;
+  overflow: hidden;
+}
+
+.multiselect label::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(78, 205, 196, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.multiselect label:hover {
+  background: #333333;
+  border-color: #4ecdc4;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(78, 205, 196, 0.2);
+}
+
+.multiselect label:hover::before {
+  left: 100%;
+}
+
+.multiselect input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  accent-color: #4ecdc4;
+  cursor: pointer;
+}
+
+.multiselect input[type="checkbox"]:checked + span {
+  color: #4ecdc4;
+  font-weight: 600;
+}
+
+.buttons { 
+  display: flex; 
+  gap: 12px; 
+  margin-top: 24px;
+}
+
+button { 
+  padding: 12px 16px; 
+  border: none;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex: 1;
+  letter-spacing: -0.01em;
+  position: relative;
+  overflow: hidden;
+}
+
+button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+button:hover::before {
+  left: 100%;
+}
+
+button:first-child {
+  background: linear-gradient(135deg, #4ecdc4 0%, #45b7d1 100%);
+  color: #000000;
+  font-weight: 700;
+}
+
+button:first-child:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(78, 205, 196, 0.4);
+}
+
+button:not(:first-child) {
+  background: #2a2a2a;
+  color: #e0e0e0;
+  border: 1px solid #333333;
+}
+
+button:not(:first-child):hover {
+  background: #333333;
+  border-color: #4ecdc4;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(78, 205, 196, 0.2);
+}
+
+button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
+}
+.preview { 
+  background: #2a2a2a; 
+  border: 1px solid #333333; 
+  border-radius: 8px;
+  padding: 16px; 
+  margin-top: 16px; 
+  max-height: 200px; 
+  overflow: auto; 
+  font-size: 13px; 
+  line-height: 1.6;
+  white-space: pre-wrap;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  color: #e0e0e0;
+}
+
+.status { 
+  margin-top: 16px; 
+  padding: 16px 20px;
+  border-radius: 12px;
+  font-size: 13px; 
+  font-weight: 500;
+  border: 1px solid;
+  position: relative;
+  overflow: hidden;
+}
+
+.status::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: currentColor;
+}
+
+.status.success { 
+  background: rgba(78, 205, 196, 0.1); 
+  color: #4ecdc4; 
+  border-color: rgba(78, 205, 196, 0.3); 
+}
+
+.status.error { 
+  background: rgba(255, 107, 107, 0.1); 
+  color: #ff6b6b; 
+  border-color: rgba(255, 107, 107, 0.3); 
+}
+
+.status.info { 
+  background: rgba(69, 183, 209, 0.1); 
+  color: #45b7d1; 
+  border-color: rgba(69, 183, 209, 0.3); 
+}
+
+.status.warning { 
+  background: rgba(254, 202, 87, 0.1); 
+  color: #feca57; 
+  border-color: rgba(254, 202, 87, 0.3); 
+}
+
+
+/* 추가 다크 테마 요소들 */
+.refresh-btn {
+  background: #2a2a2a;
+  border: 1px solid #333333;
+  border-radius: 8px;
+  padding: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-left: 12px;
+  color: #e0e0e0;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+}
+
+.refresh-btn:hover {
+  background: #333333;
+  border-color: #4ecdc4;
+  transform: translateY(-2px) rotate(180deg);
+  box-shadow: 0 4px 12px rgba(78, 205, 196, 0.2);
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  background: #2a2a2a;
+  border: 1px solid #333333;
+  border-radius: 12px;
+  margin: 12px 0;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.checkbox-group::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(78, 205, 196, 0.05), transparent);
+  transition: left 0.5s ease;
+}
+
+.checkbox-group:hover {
+  background: #333333;
+  border-color: #4ecdc4;
+  transform: translateY(-1px);
+}
+
+.checkbox-group:hover::before {
+  left: 100%;
+}
+
+.checkbox-group input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  accent-color: #4ecdc4;
+  cursor: pointer;
+}
+
+.checkbox-group label {
+  margin: 0;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  color: #e0e0e0;
+  flex: 1;
+}
+
+/* 스크롤바 스타일링 */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #2a2a2a;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4ecdc4;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #45b7d1;
+}
+
+/* 포커스 아웃라인 제거 */
+*:focus {
+  outline: none;
+}
+
+/* 선택 텍스트 스타일 */
+::selection {
+  background: rgba(78, 205, 196, 0.3);
+  color: #ffffff;
+}
+
+/* 애니메이션 */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.form-group {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.form-group:nth-child(1) { animation-delay: 0.1s; }
+.form-group:nth-child(2) { animation-delay: 0.2s; }
+.form-group:nth-child(3) { animation-delay: 0.3s; }
+.form-group:nth-child(4) { animation-delay: 0.4s; }
+.form-group:nth-child(5) { animation-delay: 0.5s; }
+.form-group:nth-child(6) { animation-delay: 0.6s; }

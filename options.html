@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>DraftMail 설정</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .container { 
+      max-width: 600px; 
+      margin: 40px auto; 
+      padding: 0;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+    .header {
+      background: linear-gradient(135deg, #1877f2 0%, #42a5f5 100%);
+      color: white;
+      padding: 24px;
+      text-align: center;
+    }
+    .header h1 {
+      font-size: 24px;
+      font-weight: 600;
+      margin: 0;
+      letter-spacing: -0.01em;
+    }
+    .content {
+      padding: 32px;
+    }
+    .form-group { 
+      margin-bottom: 24px; 
+    }
+    textarea { 
+      height: 100px; 
+      resize: vertical;
+    }
+    .hint { 
+      font-size: 12px; 
+      color: #65676b; 
+      margin-top: 6px;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>⚙️ DraftMail 설정</h1>
+    </div>
+    
+    <div class="content">
+      <div class="form-group">
+        <label>기본 언어
+          <select id="defaultLanguage">
+            <option value="한국어">한국어</option>
+            <option value="English">English</option>
+          </select>
+        </label>
+        <div class="hint">LLM이 기본적으로 사용할 출력 언어</div>
+      </div>
+
+      <div class="form-group">
+        <label>내 이름
+          <input id="myName" placeholder="예: 정용훈" />
+        </label>
+      </div>
+
+      <div class="form-group">
+        <label>내 프로필 요약(한 줄)
+          <input id="myProfile" placeholder="예: 아주대학교 소프트웨어학과, AI/추천시스템 관심" />
+        </label>
+        <div class="hint">LLM 프롬프트의 자기소개/맥락에 반영</div>
+      </div>
+
+      <div class="form-group">
+        <label>서명 블록(선택)
+          <textarea id="signature" placeholder="이름&#10;소속/직책&#10;전화 | 이메일 | 링크"></textarea>
+        </label>
+        <div class="checkbox-group">
+          <input type="checkbox" id="autoAppendSignature" />
+          <label for="autoAppendSignature">초안에 서명을 기본으로 포함</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>기본 톤 (다중 선택)</label>
+        <div class="multiselect">
+          <label><input type="checkbox" value="formal" /><span>격식적</span></label>
+          <label><input type="checkbox" value="friendly" /><span>친근한</span></label>
+          <label><input type="checkbox" value="concise" /><span>간결한</span></label>
+          <label><input type="checkbox" value="persuasive" /><span>설득적</span></label>
+          <label><input type="checkbox" value="apologetic" /><span>사과하는</span></label>
+          <label><input type="checkbox" value="assertive" /><span>단호한</span></label>
+        </div>
+        <div class="hint">팝업에서 체크한 톤과 합쳐져 사용됩니다.</div>
+      </div>
+
+      <div class="buttons">
+        <button id="save">💾 저장</button>
+        <button id="reset">🔄 초기화</button>
+      </div>
+
+      <div id="status" class="status"></div>
+    </div>
+  </div>
+  <script src="options.js"></script>
+</body>
+</html>

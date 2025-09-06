@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>DraftMail - AI 이메일 작성 도우미</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="wrapper">
+    <div class="header">
+      <h1>📧 DraftMail</h1>
+    </div>
+    
+    <div class="content">
+      <div class="form-group">
+        <label>AI 모델</label>
+        <div class="model-group">
+          <select id="model"></select>
+          <button id="refreshModels" class="refresh-btn" title="Ollama에서 설치 모델 새로고침">↻</button>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>보낼 상대 유형</label>
+        <select id="category">
+          <option>교수님</option>
+          <option>학교 교직원</option>
+          <option>채용 담당자</option>
+          <option value="custom">기타 (직접 입력)</option>
+        </select>
+        <input id="customCategory" placeholder="직접 입력하세요" style="display: none; margin-top: 8px;" />
+      </div>
+
+
+      <div class="form-group">
+        <label>작성할 텍스트 성격 (다중 선택)</label>
+        <div class="multiselect">
+          <label><input type="checkbox" value="formal" checked><span>격식적</span></label>
+          <label><input type="checkbox" value="friendly"><span>친근한</span></label>
+          <label><input type="checkbox" value="concise"><span>간결한</span></label>
+          <label><input type="checkbox" value="persuasive"><span>설득적</span></label>
+          <label><input type="checkbox" value="apologetic"><span>사과하는</span></label>
+          <label><input type="checkbox" value="assertive"><span>단호한</span></label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>간단한 메모(핵심만)
+          <textarea id="notes" rows="4" placeholder="전달할 포인트, 요청 사항, 마감일 등"></textarea>
+        </label>
+      </div>
+
+      <div class="form-group">
+        <label>언어
+          <select id="language">
+            <option value="한국어" selected>한국어</option>
+            <option value="English">English</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="checkbox-group">
+        <input type="checkbox" id="useGmailAPI" />
+        <label for="useGmailAPI">이전 메일을 Gmail API로 검색해 few-shot 활용(처음 1회 승인 필요)</label>
+      </div>
+
+      <div class="buttons">
+        <button id="generate">✨ 초안 생성</button>
+        <button id="insert">📧 Gmail에 삽입</button>
+        <button id="openOptions" title="설정 열기">⚙️ 설정</button>
+      </div>
+
+      <div id="preview" class="preview"></div>
+
+      <div class="checkbox-group">
+        <input type="checkbox" id="appendSignature" />
+        <label for="appendSignature">이번 초안에 서명 추가</label>
+      </div>
+
+      <div id="status" class="status"></div>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
