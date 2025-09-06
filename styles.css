@@ -84,14 +84,14 @@ label.inline {
 
 .model-group .refresh-btn {
   margin: 0;
-  width: 42px;
-  height: 42px;
+  width: 40px;
+  height: 40px;
   padding: 0;
   font-size: 14px;
-  min-width: 42px;
-  min-height: 42px;
-  max-width: 42px;
-  max-height: 42px;
+  min-width: 40px;
+  min-height: 40px;
+  max-width: 40px;
+  max-height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -138,7 +138,7 @@ select {
 
 .multiselect { 
   display: grid; 
-  grid-template-columns: 1fr 1fr 1fr; 
+  grid-template-columns: 1fr 1fr; 
   gap: 12px; 
   margin: 12px 0;
 }
@@ -282,7 +282,11 @@ button:disabled {
   font-size: 13px; 
   font-weight: 500;
   border: 1px solid;
-  position: relative;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
   overflow: hidden;
 }
 
